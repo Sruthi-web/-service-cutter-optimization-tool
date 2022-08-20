@@ -1,0 +1,92 @@
+{
+   "name": "Sales Order",
+   "entities": [
+     {
+       "name": "Address",
+       "nanoentities": [
+         "addressId",
+         "houseFlatNo",
+         "street",
+         "postCode",
+         "city",
+         "country"
+       ]
+     },
+     {
+       "name": "Customer",
+       "nanoentities": [
+         "customerId",
+         "firstName",
+         "lastName",
+         "dateOfBirth",
+         "email",
+         "address",
+         "customerPaymentDetail",
+         "orders"
+       ]
+     },
+     {
+       "name": "CustomerPaymentDetail",
+       "nanoentities": [
+         "paymentDetailsId",
+         "customerReference",
+         "cardNo",
+         "cardExpiryDate",
+         "customer"
+       ]
+     },
+     {
+       "name": "Item",
+       "nanoentities": [
+         "itemId",
+         "itemName",
+         "itemPrice",
+         "orders"
+       ]
+     },
+     {
+       "name": "Order",
+       "nanoentities": [
+         "orderId",
+         "items"
+       ]
+     }
+   ],
+   "relations": [
+     {
+       "origin": "Customer",
+       "destination": "Address",
+       "type": "COMPOSITION"
+     },
+     {
+       "origin": "Customer",
+       "destination": "CustomerPaymentDetail",
+       "type": "AGGREGATION"
+     },
+     {
+       "origin": "Customer",
+       "destination": "Order",
+       "type": "AGGREGATION"
+     },
+     {
+       "origin": "Order",
+       "destination": "Item",
+       "type": "COMPOSITION"
+     },
+     {
+       "origin": "Item",
+       "destination": "Order",
+       "type": "AGGREGATION"
+     },
+     {
+       "origin": "CustomerPaymentDetail",
+       "destination": "Customer",
+       "type": "COMPOSITION"
+     },
+     {
+       "origin": "Order",
+       "destination": "Customer",
+       "type": "COMPOSITION"
+     }
+   ]
+ }

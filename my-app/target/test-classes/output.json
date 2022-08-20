@@ -1,0 +1,47 @@
+{
+    "services": [
+        {
+            "nanoentities": [
+                "Customer.orders",
+                "CustomerPaymentDetail.customerReference",
+                "Item.itemName",
+                "Address.street",
+                "Item.itemId",
+                "Address.city",
+                "CustomerPaymentDetail.cardNo",
+                "Customer.address",
+                "Customer.email",
+                "Address.country",
+                "Item.orders",
+                "Order.items",
+                "Address.houseFlatNo",
+                "Order.orderId",
+                "CustomerPaymentDetail.paymentDetailsId",
+                "CustomerPaymentDetail.customer",
+                "CustomerPaymentDetail.cardExpiryDate",
+                "Address.postCode",
+                "Item.itemPrice",
+                "Customer.firstName",
+                "Customer.customerId",
+                "Customer.lastName",
+                "Customer.customerPaymentDetail",
+                "Address.addressId",
+                "Customer.dateOfBirth"
+            ],
+            "id": "A"
+        }
+    ],
+    "relations": [],
+    "useCaseResponsibility": {
+        "Service A": [
+            "CreateCustomer",
+            "FindCustomerByName",
+            "FindCustomerById",
+            "AddItem",
+            "GetItem",
+            "AddOrder",
+            "GetOrder",
+            "OrderPayment"
+        ]
+    }
+}

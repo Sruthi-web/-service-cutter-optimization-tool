@@ -1,0 +1,26 @@
+{
+   "algorithmParams":{
+      "leungM":0.1,
+      "leungDelta":0.55,
+      "cwNodeWeighting":1.0,
+      "mclExpansionOperations":2.0,
+      "mclPowerCoefficient":2.0
+   },
+   "priorities":{
+      "Identity & Lifecycle Commonality":"M",
+      "Semantic Proximity":"M",
+      "Shared Owner":"M",
+      "Structural Volatility":"XS",
+      "Latency":"M",
+      "Consistency Criticality":"XS",
+      "Availability Criticality":"XS",
+      "Content Volatility":"XS",
+      "Consistency Constraint":"M",
+      "Storage Similarity":"XS",
+      "Predefined Service Constraint":"M",
+      "Security Contextuality":"M",
+      "Security Criticality":"XS",
+      "Security Constraint":"M"
+   },
+   "algorithm":"Leung"
+}

@@ -1,0 +1,143 @@
+{
+	"useCases": [
+	  {
+		"name": "CreateCustomer",
+		"nanoentitiesRead": [
+		  "Customer.firstName",
+		  "Customer.lastName",
+		  "Customer.dateOfBirth",
+		  "Customer.email",
+		  "Customer.address"
+		],
+		"nanoentitiesWritten": [
+		  "Customer.customerId"
+		]
+	  },
+	  {
+		"name": "FindCustomerByName",
+		"nanoentitiesRead": [
+		  "Customer.firstName",
+		  "Customer.lastName"
+		],
+		"nanoentitiesWritten": [
+		  "Customer.dateOfBirth",
+		  "Customer.email",
+		  "Customer.address",
+		  "Customer.customerId"
+		]
+	  },
+	  {
+		"name": "FindCustomerById",
+		"nanoentitiesRead": [
+		  "Customer.customerId"
+		],
+		"nanoentitiesWritten": [
+		  "Customer.firstName",
+		  "Customer.lastName",
+		  "Customer.dateOfBirth",
+		  "Customer.email",
+		  "Customer.address"
+		]
+	  },
+	  {
+		"name": "AddItem",
+		"nanoentitiesRead": [
+		  "Item.itemName",
+		  "Item.itemPrice"
+		],
+		"nanoentitiesWritten": [
+		  "Item.itemId"
+		]
+	  },
+	  {
+		"name": "GetItem",
+		"nanoentitiesRead": [
+		  "Item.itemId"
+		],
+		"nanoentitiesWritten": [
+		  "Item.itemId",
+		  "Item.itemName",
+		  "Item.itemPrice"
+		]
+	  },
+	  {
+		"name": "AddOrder",
+		"nanoentitiesRead": [
+		  "Item.itemId"
+		],
+		"nanoentitiesWritten": [
+		  "Order.orderId"
+		]
+	  },
+	  {
+		"name": "GetOrder",
+		"nanoentitiesRead": [
+		  "Order.orderId"
+		],
+		"nanoentitiesWritten": [
+		  "Order.items"
+		]
+	  },
+	  {
+		"name": "OrderPayment",
+		"nanoentitiesRead": [
+		  "CustomerPaymentDetail.customer",
+		  "CustomerPaymentDetail.cardExpiryDate",
+		  "CustomerPaymentDetail.cardNo"
+		],
+		"nanoentitiesWritten": [
+		  "CustomerPaymentDetail.paymentDetailsId",
+		  "CustomerPaymentDetail.customerReference"
+		]
+	  }
+	],
+	"compatibilities": {
+	  "contentVolatility": [
+		{
+		  "characteristic": "Rarely",
+		  "nanoentities": [
+			"Item.itemPrice",
+			"Item.itemName",
+			"Customer.email",
+			"Customer.address"
+		  ]
+		}
+	  ]
+	},
+	"sharedOwnerGroups": [
+	  {
+		"name": "customerCreator",
+		"nanoentities": [
+		  "Customer.firstName",
+		  "Customer.lastName",
+		  "Customer.dateOfBirth",
+		  "Customer.email",
+		  "Address.houseFlatNo",
+		  "Address.street",
+		  "Address.postCode",
+		  "Address.city",
+		  "Address.country",
+		  "Address.addressId",
+		  "Customer.customerId"
+		]
+	  },
+	  {
+		"name": "paymentManagement",
+		"nanoentities": [
+		  "CustomerPaymentDetail.paymentDetailsId",
+		  "CustomerPaymentDetail.customerReference",
+		  "CustomerPaymentDetail.cardNo",
+		  "CustomerPaymentDetail.cardExpiryDate"
+		]
+	  },
+	  {
+		"name": "orderManagement",
+		"nanoentities": [
+		  "Order.orderId",
+		  "Item.itemId",
+		  "Item.itemName",
+		  "Item.itemPrice"
+		]
+	  }
+	]
+  }
